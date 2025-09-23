@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(){
+    float r, c, area;
+    printf("Radius : ");
+    scanf("%f",&r);
+    area=3.14*r*r;
+    printf("area = %f\n",area);
+    c=2*3.14*r;
+    printf("circumference = %f\n",c);
+    return 0;
+}
