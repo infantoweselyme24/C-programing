@@ -1,0 +1,27 @@
+#include <stdio.h>
+int countWords(char str[]) {
+    int i = 0, wordCount = 0;
+    int inWord = 0;
+    while (str[i] != '\0') {
+        if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n') {
+            if (inWord == 0) {
+                wordCount++;
+                inWord = 1;
+            }
+        } else {
+            inWord = 0;
+        }
+        i++;
+    }
+
+    return wordCount;
+}
+
+int main() {
+    char str[200];
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    int totalWords = countWords(str);
+    printf("Total number of words: %d\n", totalWords);
+    return 0;
+}
